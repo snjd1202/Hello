@@ -12,38 +12,43 @@ public class Ex01 {
 		 		
 		 		'b' - 32 ==> 'B'
 		 		
-		 	숙제 2]
-		 		정수 3개를 입력받아서 
-		 		세 수 중 큰 숫자만 출력되게 하세요.
-		 		
-		 		(삼항연산자 사용해서)
 		 */
 	public static void main(String[] args) {
 	//	System.out.println((char)('a' - 32));
 		
-		// 숙제 1번.
+		// 숙제 1번
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("알파벳을 입력하세요! : ");
-		String str1 = sc.nextLine();
+		String str = sc.nextLine();
 		
-		char ch1 = str1.charAt(0);
+		char ch = str.charAt(0);
 						
-		String str2 = "입력된 문자 " + ch1 + "를  " + ((ch1 >= 'a') ? "대" : "소") +" 문자 "+ (ch1 < 'a' ? (char)(ch1 + 32) : (char)(ch1 - 32)) + "로 변경하였습니다." ;
+		String str2 = "입력된 문자 " + ch + "를  " + ((ch >= 'a') ? "대" : "소") +" 문자 "+ (ch < 'a' ? (char)(ch + 32) : (char)(ch - 32)) + "로 변경하였습니다." ;
 		
 		System.out.println(str2);
 		System.out.println();
+	
 		
-		// 숙제 2번.
+		// 풀이]
+		
+		// 1. 입력받을 준비
 		Scanner sc1 = new Scanner(System.in);
 		
-		System.out.println("정수 3개를 입력하세요! : ");
-		String str3 = sc1.nextLine();
+		// 2. 메세지 출력
+		System.out.println("문자를 입력하세요. : ");
 		
-		char ch2 = str3.charAt(0);
+		// 3. 입력데이터 변수에 담고
+		String str1 = sc.nextLine();
 		
-		String str4 = "입력된 문자 " + ch2 + "중 가장 큰 수는 " + ((ch2 > 3) ? ((ch2 > 2) ? "a": "s"):"d") + "입니다.";
+		// 4. 변수에 담긴 문자열에서 문자 추출
+		char ch1 = str1.charAt(0);
 		
+		// 5. 변환해서 변수에 담고
+		char ch2 = (ch1 >= 'a') ? (char)(ch1 -('a'-'A')) : (char)(ch1 +('a' - 'A'));
+		
+		// 6. 출력
+		System.out.println("입력한 문자 [" + ch1 + "]를 변환하면 [" + ch2 + "] 입니다.");
 		
 		
 	}
